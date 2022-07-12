@@ -4,7 +4,7 @@ The Algorithm used to solve the rubiks cube is Kociemba Algorithm ([read here](h
 
 # Working
 The Face of the cube is detected by Tiny YOLOv3 model trained on custom data prepared by Phone captures. The images were then labeled using [labelImg](https://github.com/tzutalin/labelImg) and the annotations were generated. \
-A Tiny YOLOv3 model was then trained using this Awesome Repo, [TrainYourOwnYOLO](https://github.com/AntonMu/TrainYourOwnYOLO). The training process and explanation can be found in the [notebook](https://github.com/Varun221/rubiks_camsolver/blob/master/rubiks_camsolver_training.ipynb) given above. 
+A Tiny YOLOv3 model was then trained using this Awesome Repo, [TrainYourOwnYOLO](https://github.com/AntonMu/TrainYourOwnYOLO).
 After the training the weights file was generated ([you can find it here](https://drive.google.com/file/d/1kFoPiE-IZl9eVfnV3zGOFlW5M3_sB6Rd/view?usp=sharing)), it was used along with the inference code in [this](https://github.com/AntonMu/TrainYourOwnYOLO) repo to detect the faces of the cube in a video.  \
 Once the cube face is detected, the box image is cropped and the colors of the faces are found. The colors of the faces are then used to generate Cube string which denotes the positions of the pieces of the cube. \
 To solve the cube, I used the library [rubiks_solver](https://github.com/Wiston999/python-rubik) which generates solutions for the cube in various methods.
